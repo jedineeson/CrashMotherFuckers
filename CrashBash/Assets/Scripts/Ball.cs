@@ -5,19 +5,20 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField]
-    private float m_MoveSpeed = 1;
+    private float m_MoveSpeed = 0.01f;
 
+    private Vector3 m_Dir = new Vector3();
  
 
-    void Start()
+    private void Start()
     {
-        
+        m_Dir = transform.forward;
     }
 
 
-    void Update()
+    private void Update()
     {
-        
+        transform.position = m_Dir * m_MoveSpeed;
     }
 
     public void SelfDestruct()
