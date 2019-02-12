@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     private float m_MoveSpeed;
 
     private int m_Index;
+    public int Index
+    {
+        get { return m_Index; } // Pour DEBUG
+    }
 
     private float m_PositionFloat = 0.5f;
 
