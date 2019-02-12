@@ -16,9 +16,6 @@ public class PlayerController : MonoBehaviour
         get { return m_Index; } // Pour DEBUG
     }
 
-    public int Index
-    { get { return m_Index; } } // POUR DEBUG SEULEMENT
-
     private float m_PositionFloat = 0.5f;
 
     private void Update()
