@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/JimWorkingScene.unity
+- path: Assets/Scenes/PatWorkingScene.unity
   isLoaded: 1
   isActive: 1
