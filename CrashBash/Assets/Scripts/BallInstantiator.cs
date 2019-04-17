@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class BallInstantiator : MonoBehaviour
 {
-
     [SerializeField]
     private GameObject m_Ball;
     [SerializeField]
     private float m_Cooldown = 3.0f;
+
     private float m_Timer = 0.0f;
 
     private Color m_NormalColor;
     [SerializeField]
     private Color m_SignalColor;
-
 
     [SerializeField]
     private List<Transform> m_SpawnPoints = new List<Transform>();
@@ -34,15 +33,12 @@ public class BallInstantiator : MonoBehaviour
     {
         m_Timer += Time.deltaTime;
 
-
-
         if (m_Timer > m_Cooldown / 2)
         {
             if (!m_SignalSent)
             {
                 SignalBallSpawner();
             }
-
 
             if (m_Timer > m_Cooldown)
             {

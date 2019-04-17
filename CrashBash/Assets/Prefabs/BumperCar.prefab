@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1384498665420448792}
   - component: {fileID: 6153039143249942395}
   - component: {fileID: 2353836281238205647}
+  - component: {fileID: 751276449047096759}
   m_Layer: 0
   m_Name: BumperCar
   m_TagString: Untagged
@@ -62,6 +63,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MoveSpeed: 1
+--- !u!135 &751276449047096759
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2570478644458280002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 93.00224
+  m_Center: {x: 0, y: -37.65543, z: 5.2079663}
 --- !u!1 &3055732091412348654
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,4 +38,14 @@ public class PlayerController : MonoBehaviour
         m_MaxPos = maxPos;
         m_Index = index;
     }
+
+    private void OnTriggerStay(Collider aOther)
+    {
+        if(aOther.gameObject.GetComponent<Ball>() && Input.GetKeyDown(KeyCode.Space))
+        {
+            Ball ball = aOther.gameObject.GetComponent<Ball>();
+            ball.SpeedUp();
+            ball.SetDir(new Vector3(ball.transform.position.x - transform.position.x, 0f, (ball.transform.position.z - transform.position.z)).normalized);
+        }
+    }
 }

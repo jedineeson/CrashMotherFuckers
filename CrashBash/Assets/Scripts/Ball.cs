@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     private Rigidbody m_RigidBody;
 
     private Vector3 m_Dir = new Vector3();
-
+    private bool m_CanSpeedUp = true;
 
     private void Update()
     {
@@ -33,6 +33,21 @@ public class Ball : MonoBehaviour
         return m_Dir;
     }
 
+    public void SpeedUp()
+    {
+        if (m_CanSpeedUp)
+        {
+            m_MoveSpeed *= 2f;
+            m_CanSpeedUp = false;
+        }
+    }
+
+    /*public void SetSpeed(float speed)
+    {
+        m_MoveSpeed = speed;
+    }
+    */
+
     private void OnCollisionEnter(Collision aOther)
     {
         // Define new Direction
@@ -40,7 +55,15 @@ public class Ball : MonoBehaviour
         {
             m_Dir.x = (gameObject.transform.position.x - aOther.gameObject.transform.position.x);
             m_Dir.z = gameObject.transform.position.z - aOther.gameObject.transform.position.z;
+            m_Dir.y = 0f;
             m_Dir = m_Dir.normalized;
+
+            /*if(aOther.gameObject.layer == LayerMask.NameToLayer("Ball"))
+            {
+                float speed = aOther.gameObject.GetComponent<Ball>().m_MoveSpeed;
+                aOther.gameObject.GetComponent<Ball>().SetSpeed(m_MoveSpeed);
+                SetSpeed(speed);
+            }*/
         }
     }
 }
